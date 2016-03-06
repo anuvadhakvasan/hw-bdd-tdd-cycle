@@ -1,0 +1,16 @@
+Feature: create a movie
+
+  As an avid moviegoer
+  So that I can see the details of a particular movie
+  I want to create a movie in the database and display it
+
+Scenario: add a new movie to the database and display it
+  When I am on the RottenPotatoes home page
+  And I follow "Add new movie"
+  Then I should be on the Create New Movie page
+  When I fill in "movie_title" with "Parashakthi"
+  And I press "Save Changes"
+  Then I should be on the RottenPotatoes home page
+  And I should see "Parashakthi was successfully created."
+  
+

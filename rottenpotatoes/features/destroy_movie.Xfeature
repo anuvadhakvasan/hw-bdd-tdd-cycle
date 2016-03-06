@@ -1,0 +1,23 @@
+Feature: delete a movie from the database
+
+  As a moviegoer
+  So that I can avoid seeing unwatnted movies
+  I want to delete a movie from the database and ensure it is not displayed
+  
+Background: movies in database
+    Given the following movies exist:
+      
+  | title        | rating | director     | release_date |
+  | Star Wars    | PG     | George Lucas |   1977-05-25 |
+  | Blade Runner | PG     | Ridley Scott |   1982-06-25 |       
+
+
+Scenario: remove a movie from the database and and the view
+  Given I am on the details page for "Star Wars"
+  When  I press "Delete"
+
+  Then I should be on the home page
+  And I should see "Blade Runner"
+  And I should see "Movie 'Star Wars' deleted."
+
+
